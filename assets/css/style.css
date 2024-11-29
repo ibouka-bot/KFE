@@ -360,24 +360,7 @@ body {
 }
 
 /* === Responsivité === */
-@media (max-width: 768px) {
-  .banner h1 {
-    font-size: 2.5rem;
-  }
-  .banner p {
-    font-size: 1rem;
-  }
-  .service {
-    width: 100%;
-  }
-  .carousel-item img {
-    height: 300px;
-  }
-  .contact-wrapper {
-    flex-direction: column;
-  }
-}
-
+@media (max-width: 768px) { .banner h1 { font-size: 2.5rem; } .banner p { font-size: 1rem; } .service { width: 100%; } .carousel-item img { height: 300px; } .contact-wrapper { flex-direction: column; } }
 /* === Animations de défilement === */
 .scroll-animation {
   opacity: 0;
