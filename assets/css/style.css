@@ -14,6 +14,12 @@
   box-sizing: border-box;
   font-family: var(--font-family);
 }
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
 /* === Menu latéral === */
 .navbar {
   position: fixed;
@@ -25,44 +31,61 @@
   transform: translateX(100%); /* Cache le menu hors écran */
   transition: transform 0.3s ease-in-out;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 }
 
 .navbar.active {
-  transform: translateX(0); /* Affiche le menu */
+  transform: translateX(0); /* Fait apparaître le menu */
 }
 
-.navbar ul {
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.menu {
   list-style: none;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  padding: 0;
+  width: 100%;
 }
 
-.navbar ul li {
+.menu li {
+  margin: 15px 0;
   text-align: center;
 }
 
-.navbar ul li a {
+.menu li a {
   text-decoration: none;
-  color: white;
+  color: var(--text-color);
   font-size: 1.2rem;
+  font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
-.navbar ul li a:hover {
+.menu li a.active {
   color: var(--secondary-color);
 }
 
-/* === Icône du menu (≡) === */
+.menu li a:hover {
+  color: var(--secondary-color);
+}
+
+/* === Bouton menu (☰) === */
 .menu-toggle {
   position: fixed;
   top: 15px;
   right: 15px;
   background-color: transparent;
   border: none;
-  font-size: 1.8rem;
-  color: white;
+  font-size: 2rem;
+  color: var(--text-color);
   cursor: pointer;
   z-index: 1000;
 }
@@ -70,7 +93,6 @@
 .menu-toggle:hover {
   color: var(--secondary-color);
 }
-
 
 /* === Corps global === */
 body {
@@ -416,19 +438,11 @@ body {
   font-size: 0.9rem;
 }
 
+
 /* === Responsivité === */
 @media (max-width: 768px) {
-  .navbar ul {
-    padding: 30px 10px;
-    gap: 15px; /* Réduit l'espacement entre les liens */
-  }
-
-  .navbar ul li a {
-    font-size: 1rem; /* Réduit la taille des liens */
-  }
-
-  .menu-toggle {
-    font-size: 1.5rem; /* Taille réduite de l'icône */
+  .menu li a {
+    font-size: 1rem;
   }
 }
 
