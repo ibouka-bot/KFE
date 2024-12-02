@@ -24,36 +24,26 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  left: 0; /* Alignez le menu sur le côté gauche */
+  left: 0;
   height: 100%;
   width: 250px; /* Largeur du menu */
   background-color: var(--primary-color);
   display: flex;
-  flex-direction: column; /* Dispose les éléments verticalement */
-  align-items: center;
-  justify-content: space-around; /* Espacement vertical uniforme */
+  flex-direction: column; /* Empile verticalement les éléments */
+  align-items: center; /* Centre horizontalement */
+  justify-content: center; /* Centre verticalement */
   padding: 20px 0;
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%); /* Cache le menu par défaut */
   z-index: 1000;
 }
 
-/* Affichez le menu lorsque actif */
+/* Lorsque le menu est actif */
 .navbar.active {
   transform: translateX(0);
 }
 
-/* Logo */
-.logo-container {
-  margin-bottom: 20px;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-}
-
-/* Liste des éléments du menu */
+/* Style des liens du menu */
 .menu {
   list-style: none;
   padding: 0;
@@ -68,19 +58,19 @@ body {
 
 .menu li a {
   text-decoration: none;
-  color: var(--text-color);
-  font-size: 1.2rem;
+  color: white; /* Couleur des liens */
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 0;
-  display: block; /* Chaque lien occupe toute la largeur */
+  display: block; /* Les liens occupent toute la largeur */
   transition: color 0.3s ease-in-out;
 }
 
 .menu li a:hover {
-  color: var(--secondary-color);
+  color: var(--secondary-color); /* Couleur au survol */
 }
 
-/* Bouton de menu */
+/* Bouton du menu */
 .menu-toggle {
   position: fixed;
   top: 15px;
@@ -93,6 +83,7 @@ body {
   cursor: pointer;
   z-index: 1100;
 }
+
 
 
 /* === Corps global === */
