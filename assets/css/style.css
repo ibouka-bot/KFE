@@ -20,42 +20,50 @@ body {
   color: var(--text-color);
 }
 
-/* === Menu latéral === */
+/* Menu latéral */
 .navbar {
   position: fixed;
   top: 0;
-  right: -250px; /* Caché hors de l'écran */
+  left: 0; /* Alignez le menu sur le côté gauche */
   height: 100%;
-  width: 250px;
+  width: 250px; /* Largeur du menu */
   background-color: var(--primary-color);
-  transition: right 0.3s ease-in-out;
-  z-index: 999;
   display: flex;
   flex-direction: column; /* Dispose les éléments verticalement */
-  align-items: center; /* Centre horizontalement les éléments */
-  justify-content: space-evenly; /* Espace égal entre les éléments */
+  align-items: center;
+  justify-content: space-around; /* Espacement vertical uniforme */
   padding: 20px 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%); /* Cache le menu par défaut */
+  z-index: 1000;
 }
 
+/* Affichez le menu lorsque actif */
+.navbar.active {
+  transform: translateX(0);
+}
+
+/* Logo */
 .logo-container {
   margin-bottom: 20px;
 }
 
 .logo {
-  width: 120px;
+  width: 100px;
   height: auto;
 }
 
+/* Liste des éléments du menu */
 .menu {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%; /* Occupe toute la largeur du menu */
+  width: 100%; /* Prend toute la largeur du menu */
 }
 
 .menu li {
-  margin: 15px 0; /* Espacement vertical entre les éléments */
-  text-align: center; /* Centre le texte */
+  margin: 15px 0; /* Espacement vertical */
+  text-align: center; /* Centre les liens */
 }
 
 .menu li a {
@@ -63,36 +71,29 @@ body {
   color: var(--text-color);
   font-size: 1.2rem;
   font-weight: bold;
-  display: block; /* Force le lien à prendre toute la largeur */
-  padding: 10px 0; /* Ajoute un peu d'espace à l'intérieur */
+  padding: 10px 0;
+  display: block; /* Chaque lien occupe toute la largeur */
   transition: color 0.3s ease-in-out;
-}
-
-.menu li a.active {
-  color: var(--secondary-color);
 }
 
 .menu li a:hover {
   color: var(--secondary-color);
 }
 
-
-/* === Bouton menu (☰) === */
+/* Bouton de menu */
 .menu-toggle {
   position: fixed;
   top: 15px;
   right: 15px;
-  background-color: transparent;
+  background-color: var(--secondary-color);
+  color: white;
   border: none;
-  font-size: 2rem;
-  color: var(--text-color);
+  padding: 10px;
+  font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1100;
 }
 
-.menu-toggle:hover {
-  color: var(--secondary-color);
-}
 
 /* === Corps global === */
 body {
