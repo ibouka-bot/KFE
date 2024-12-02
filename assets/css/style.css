@@ -15,77 +15,6 @@
   font-family: var(--font-family);
 }
 
-body {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-}
-
-/* Menu latéral */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 250px; /* Largeur du menu */
-  background-color: var(--primary-color);
-  display: flex;
-  flex-direction: column; /* Empile verticalement les éléments */
-  align-items: center; /* Centre horizontalement */
-  justify-content: center; /* Centre verticalement */
-  padding: 20px 0;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(-100%); /* Cache le menu par défaut */
-  z-index: 1000;
-}
-
-/* Lorsque le menu est actif */
-.navbar.active {
-  transform: translateX(0);
-}
-
-/* Style des liens du menu */
-.menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%; /* Prend toute la largeur du menu */
-}
-
-.menu li {
-  margin: 15px 0; /* Espacement vertical */
-  text-align: center; /* Centre les liens */
-}
-
-.menu li a {
-  text-decoration: none;
-  color: white; /* Couleur des liens */
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 10px 0;
-  display: block; /* Les liens occupent toute la largeur */
-  transition: color 0.3s ease-in-out;
-}
-
-.menu li a:hover {
-  color: var(--secondary-color); /* Couleur au survol */
-}
-
-/* Bouton du menu */
-.menu-toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-
-
 /* === Corps global === */
 body {
   line-height: 1.6;
@@ -430,11 +359,26 @@ body {
   font-size: 0.9rem;
 }
 
-
 /* === Responsivité === */
 @media (max-width: 768px) {
-  .menu li a {
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner p {
     font-size: 1rem;
+  }
+
+  .service {
+    width: 100%;
+  }
+
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
   }
 }
 
