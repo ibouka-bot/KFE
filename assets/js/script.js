@@ -1,8 +1,14 @@
 // === Navigation Smooth Scroll ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-list').classList.toggle('active');
+  // Sélectionne le bouton du menu et le menu latéral
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+
+// Ajoute un événement "click" pour afficher ou masquer le menu
+menuToggle.addEventListener('click', () => {
+  navbar.classList.toggle('active');
 });
+
 
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
