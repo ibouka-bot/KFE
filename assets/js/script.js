@@ -1,5 +1,9 @@
 // === Navigation Smooth Scroll ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-list').classList.toggle('active');
+});
+
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
     document.querySelector(this.getAttribute('href')).scrollIntoView({
