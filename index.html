@@ -7,49 +7,44 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Lien d'accès rapide -->
-  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
-  <!-- Bouton pour ouvrir/fermer le menu -->
-  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
-
-  <!-- Menu latéral -->
-  <nav class="navbar">
-    <div class="logo-container">
-      <img src="logo.png" alt="Logo KFE" class="logo">
+  <!-- En-tête -->
+  <header class="header">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Logo BTP">
     </div>
-    <ul class="menu">
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projets</a></li>
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#contact" class="active">Contact</a></li>
-    </ul>
-  </nav>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Contenu principal -->
-  <main id="main-content">
-    <!-- Bannière -->
-    <section id="accueil" class="banner">
+  <!-- Bannière -->
+  <main>
+    <div class="banner">
       <div class="banner-content">
         <h1>Bienvenue chez KFE</h1>
         <p>Nous réalisons vos projets de construction avec expertise et qualité.</p>
         <a href="#services" class="btn-primary">Découvrez nos services</a>
       </div>
-    </section>
+    </div>
 
     <!-- Section À propos de nous -->
     <section id="about" class="about-section">
-      <div class="container">
-        <h2>À propos de nous</h2>
-        <p>
-          BTP Construction est une entreprise spécialisée dans la construction de bâtiments, la rénovation, et l'aménagement extérieur. Forts de plusieurs années d'expérience, nous mettons notre expertise au service de vos projets pour vous offrir des solutions modernes et de qualité.
-        </p>
-        <p>
-          Notre équipe est composée de professionnels qualifiés et passionnés qui s'engagent à réaliser vos projets dans le respect des délais et des normes en vigueur. Nous sommes fiers de notre réputation de fiabilité et d'excellence.
-        </p>
-      </div>
-    </section>
+        <div class="container">
+          <h2>À propos de nous</h2>
+          <p>
+            BTP Construction est une entreprise spécialisée dans la construction de bâtiments, la rénovation, et l'aménagement extérieur. Forts de plusieurs années d'expérience, nous mettons notre expertise au service de vos projets pour vous offrir des solutions modernes et de qualité.
+          </p>
+          <p>
+            Notre équipe est composée de professionnels qualifiés et passionnés qui s'engagent à réaliser vos projets dans le respect des délais et des normes en vigueur. Nous sommes fiers de notre réputation de fiabilité et d'excellence.
+          </p>
+        </div>
+      </section>
 
     <!-- Section Nos Projets Réalisés -->
     <section id="projects" class="carousel-section">
@@ -69,14 +64,14 @@
                 <img src="assets/images/delafosse.jpg" alt="Projet 2" class="carousel-image">
                 <div class="carousel-caption">
                   <h3>Réhabilitation du Lycée Delafosse</h3>
-                  <p>Rénovation des bâtiments, mise à jour des équipements et amélioration des espaces extérieurs.</p>
+                  <p>Le projet a impliqué la rénovation des bâtiments, la mise à jour des équipements et l'amélioration des espaces extérieurs, visant à optimiser l'accessibilité, la sécurité et la performance.</p>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="assets/images/pisterural.png" alt="Projet 3" class="carousel-image">
                 <div class="carousel-caption">
                   <h3>Route Rurale à Bounkling</h3>
-                  <p>Amélioration de l'accessibilité et des infrastructures locales pour soutenir le développement économique.</p>
+                  <p>Le projet de construction de la route rurale à Bounkling visait à améliorer l'accessibilité de la région. Il comprend l'aménagement de la route et la création de passages sécurisés, facilitant ainsi les déplacements des habitants et contribuant au développement économique local.</p>
                 </div>
               </div>
             </div>
@@ -88,58 +83,62 @@
     </section>
 
     <!-- Section Services -->
-    <section id="services">
-      <h2>Nos Services</h2>
-      <div class="service-container">
-        <div class="service">
-          <img src="assets/images/batiment.png" alt="Construction de bâtiments">
-          <h3>Construction de bâtiments</h3>
-          <p>Des solutions modernes pour tous vos besoins en construction.</p>
-        </div>
-        <div class="service">
-          <img src="assets/images/service1.jpg" alt="Travaux publics">
-          <h3>Travaux publics</h3>
-          <p>Construction et réhabilitation d'infrastructures publiques : routes, ponts, et réseaux souterrains.</p>
-        </div>
-        <div class="service">
-          <img src="assets/images/service3.webp" alt="Aménagement extérieur">
-          <h3>Aménagement extérieur</h3>
-          <p>Des projets sur mesure pour embellir vos espaces extérieurs.</p>
-        </div>
-        <div class="service">
-          <img src="assets/images/route.png" alt="Construction de routes">
-          <h3>Construction de routes</h3>
-          <p>Conception et réalisation de routes fiables et durables, adaptées aux exigences modernes de transport.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Contact -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <h2>Contactez-nous</h2>
-        <p>Nous serions ravis de discuter de vos projets et de répondre à vos questions.</p>
-        <div class="contact-wrapper">
-          <div class="contact-details">
-            <h3>Adresse</h3>
-            <p>Dakar, Sénégal</p>
-          </div>
-          <div class="contact-details">
-            <h3>Téléphone</h3>
-            <p><a href="tel:+221123456789">33 867 05 92</a></p>
-          </div>
-          <div class="contact-details">
-            <h3>Email</h3>
-            <p><a href="mailto:contact@kfeconstruction.com">contact@kfeconstruction.com</a></p>
-          </div>
-          <div class="contact-details">
-            <h3>Réseaux Sociaux</h3>
-            <a href="#"><img src="assets/images/linkedin.png" alt="LinkedIn"></a>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="services">
+  <h2>Nos Services</h2>
+  <div class="service-container">
+    <div class="service">
+      <img src="assets/images/batiment.png" alt="Construction de bâtiments">
+      <h3>Construction de bâtiments</h3>
+      <p>Des solutions modernes pour tous vos besoins en construction.</p>
+    </div>
+    <div class="service">
+      <img src="assets/images/service1.jpg" alt="Travaux publics">
+      <h3>Travaux publics</h3>
+      <p>Construction et réhabilitation d'infrastructures publiques : routes, ponts, et réseaux souterrains.</p>
+    </div>
+    <div class="service">
+      <img src="assets/images/service3.webp" alt="Aménagement extérieur">
+      <h3>Aménagement extérieur</h3>
+      <p>Des projets sur mesure pour embellir vos espaces extérieurs.</p>
+    </div>
+    <div class="service">
+      <img src="assets/images/route.png" alt="Construction de routes">
+      <h3>Construction de routes</h3>
+      <p>Conception et réalisation de routes fiables et durables, adaptées aux exigences modernes de transport.</p>
+    </div>
+  </div>
+</section>
   </main>
+  
+
+  <!-- Section Contact -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Contactez-nous</h2>
+    <p class="section-subtitle">Nous serions ravis de discuter de vos projets et de répondre à vos questions.</p>
+    <div class="contact-wrapper">
+      <div class="contact-details">
+        <h3>Adresse</h3>
+        <p>Dakar, Sénégal</p>
+      </div>
+      <div class="contact-details">
+        <h3>Téléphone</h3>
+        <p><a href="tel:+221123456789">33 867 05 92</a></p>
+      </div>
+      <div class="contact-details">
+        <h3>Email</h3>
+        <p><a href="mailto:contact@kfeconstruction.com">contact@KFE.com</a></p>
+      </div>
+      <div class="contact-details">
+        <h3>Réseaux Sociaux</h3>
+        <div class="social-media">
+          <a href="#"><img src="assets/images/linkedin.png" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Pied de page -->
   <footer class="footer">
