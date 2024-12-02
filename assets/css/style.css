@@ -14,6 +14,63 @@
   box-sizing: border-box;
   font-family: var(--font-family);
 }
+/* === Menu latéral === */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background-color: var(--primary-color);
+  transform: translateX(100%); /* Cache le menu hors écran */
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.navbar.active {
+  transform: translateX(0); /* Affiche le menu */
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.navbar ul li {
+  text-align: center;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* === Icône du menu (≡) === */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-toggle:hover {
+  color: var(--secondary-color);
+}
+
 
 /* === Corps global === */
 body {
