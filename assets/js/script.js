@@ -1,6 +1,14 @@
 // === Navigation Smooth Scroll ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  // Sélectionne le bouton du menu et le menu latéral
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Sélectionne le bouton du menu et le menu latéral
 const menuToggle = document.querySelector('.menu-toggle');
 const navbar = document.querySelector('.navbar');
 
@@ -10,13 +18,6 @@ menuToggle.addEventListener('click', () => {
 });
 
 
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
 
 // === Carousel Functionality ===
 const carouselTrack = document.querySelector('.carousel-track');
