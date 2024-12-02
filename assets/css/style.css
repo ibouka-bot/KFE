@@ -418,19 +418,17 @@ body {
 
 /* === Responsivité === */
 @media (max-width: 768px) {
-  .nav-list {
-    display: none; 
-    flex-direction: column; 
-    gap: 10px; width: 100%; 
-    background-color: var(--primary-color);
+  .navbar ul {
+    padding: 30px 10px;
+    gap: 15px; /* Réduit l'espacement entre les liens */
   }
-  
+
+  .navbar ul li a {
+    font-size: 1rem; /* Réduit la taille des liens */
+  }
+
   .menu-toggle {
-    display: block;
-  } 
-  
-  .nav-list.active {
-    display: flex;
+    font-size: 1.5rem; /* Taille réduite de l'icône */
   }
 }
 
