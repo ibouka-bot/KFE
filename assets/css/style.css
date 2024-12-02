@@ -361,24 +361,19 @@ body {
 
 /* === Responsivité === */
 @media (max-width: 768px) {
-  .banner h1 {
-    font-size: 2.5rem;
+  .nav-list {
+    display: none; 
+    flex-direction: column; 
+    gap: 10px; width: 100%; 
+    background-color: var(--primary-color);
   }
-
-  .banner p {
-    font-size: 1rem;
-  }
-
-  .service {
-    width: 100%;
-  }
-
-  .carousel-item img {
-    height: 300px;
-  }
-
-  .contact-wrapper {
-    flex-direction: column;
+  
+  .menu-toggle {
+    display: block;
+  } 
+  
+  .nav-list.active {
+    display: flex;
   }
 }
 
