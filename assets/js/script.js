@@ -69,6 +69,15 @@ window.addEventListener('scroll', () => {
 });
 
 // === Scroll Animation ===
+// Sélectionne le bouton du menu et le menu latéral
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+
+// Ajoute un événement "click" pour afficher ou masquer le menu
+menuToggle.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
+
 const scrollElements = document.querySelectorAll('.scroll-animation');
 
 const elementInView = (el, dividend = 1) => {
