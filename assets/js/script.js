@@ -89,15 +89,6 @@ const handleScrollAnimation = () => {
     }
   });
 };
-// Sélection des éléments
-const menuToggle = document.querySelector('.menu-toggle');
-const body = document.body;
-
-// Événement pour ouvrir/fermer le menu
-menuToggle.addEventListener('click', () => {
-  body.classList.toggle('menu-open');
-});
-
 
 window.addEventListener('scroll', () => {
   handleScrollAnimation();
