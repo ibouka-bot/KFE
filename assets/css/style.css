@@ -1,8 +1,9 @@
-/* === Variables globales === */
+/* === Variables === */
 :root {
   --primary-color: #0056a6;
   --secondary-color: #ffd700;
-  --text-color: white;
+  --background-color: #f4f4f9;
+  --text-color: #333;
   --font-family: 'Roboto', sans-serif;
 }
 
@@ -13,94 +14,6 @@
   box-sizing: border-box;
   font-family: var(--font-family);
 }
-
-body {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  overflow-x: hidden; /* Empêche le défilement horizontal */
-}
-
-/* === Menu latéral === */
-.navbar {
-  position: fixed;
-  top: 0;
-  right: -250px; /* Caché hors de l'écran */
-  height: 100%;
-  width: 250px;
-  background-color: var(--primary-color);
-  transition: right 0.3s ease-in-out;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-}
-
-.navbar.active {
-  right: 0; /* Glisse vers la droite pour s'afficher */
-}
-
-.logo-container {
-  margin-bottom: 20px;
-}
-
-.logo {
-  width: 120px;
-  height: auto;
-}
-
-.menu {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-.menu li {
-  margin: 15px 0;
-  text-align: center;
-}
-
-.menu li a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
-}
-
-.menu li a.active {
-  color: var(--secondary-color);
-}
-
-.menu li a:hover {
-  color: var(--secondary-color);
-}
-
-/* === Bouton menu (☰) === */
-.menu-toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background-color: transparent;
-  border: none;
-  font-size: 2rem;
-  color: var(--text-color);
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.menu-toggle:hover {
-  color: var(--secondary-color);
-}
-
-/* === Responsivité === */
-@media (max-width: 768px) {
-  .menu li a {
-    font-size: 1rem;
-  }
-}
-
-
 
 /* === Corps global === */
 body {
@@ -446,6 +359,28 @@ body {
   font-size: 0.9rem;
 }
 
+/* === Responsivité === */
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  .service {
+    width: 100%;
+  }
+
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}
 
 /* === Animations de défilement === */
 .scroll-animation {
