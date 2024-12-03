@@ -1,91 +1,105 @@
-/* === Variables === */
+/* === Variables globales === */
 :root {
   --primary-color: #0056a6;
   --secondary-color: #ffd700;
-  --background-color: #f4f4f9;
-  --text-color: #333;
-  --menu-width: 250px;
+  --text-color: white;
+  --font-family: 'Roboto', sans-serif;
 }
 
 /* === Réinitialisation générale === */
 * {
   margin: 0;
-  font-family: Arial, sans-serif;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-family);
 }
 
-/* === Header Principal === */
-.header-container {
-  display: flex;
-  justify-content: space-between; /* Sépare le logo et le menu */
-  align-items: center;
-  padding: 10px 20px;
+body {
   background-color: var(--primary-color);
+  color: var(--text-color);
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+/* === Menu latéral === */
+.navbar {
   position: fixed;
-  width: 100%;
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* === Logo === */
-.logo img {
-  height: 50px; /* Ajustez selon vos besoins */
-}
-
-/* === Bouton Menu === */
-.menu-toggle {
+  right: -250px; /* Caché hors de l'écran */
+  height: 100%;
+  width: 250px;
   background-color: var(--primary-color);
-  color: white;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
+  padding-top: 20px;
+}
+
+.navbar.active {
+  right: 0; /* Glisse vers la droite pour s'afficher */
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.menu li {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu li a.active {
+  color: var(--secondary-color);
+}
+
+.menu li a:hover {
+  color: var(--secondary-color);
+}
+
+/* === Bouton menu (☰) === */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  z-index: 1000;
 }
 
 .menu-toggle:hover {
-  background-color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
-/* === Menu Vertical (inchangé) === */
-.vertical-menu {
-  position: fixed;
-  top: 0;
-  left: -100%; /* Masqué par défaut */
-  width: 250px;
-  height: 100vh;
-  background-color: var(--primary-color);
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  transition: left 0.3s ease-in-out;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* === Responsivité === */
+@media (max-width: 768px) {
+  .menu li a {
+    font-size: 1rem;
+  }
 }
 
-.vertical-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.vertical-menu li {
-  margin: 20px 0;
-}
-
-.vertical-menu a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-}
 
 
 /* === Corps global === */
