@@ -69,18 +69,6 @@ window.addEventListener('scroll', () => {
 });
 
 // === Scroll Animation ===
-
-// Sélectionner le bouton de menu et la liste de navigation
-const menuToggle = document.querySelector('.menu-toggle');
-const navList = document.querySelector('.nav-list');
-
-// Ajouter un événement de clic au bouton de menu
-menuToggle.addEventListener('click', () => {
-  // Basculer la classe 'active' sur la liste de navigation
-  navList.classList.toggle('active');
-});
-
-
 const scrollElements = document.querySelectorAll('.scroll-animation');
 
 const elementInView = (el, dividend = 1) => {
