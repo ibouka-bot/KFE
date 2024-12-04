@@ -15,81 +15,6 @@
   font-family: var(--font-family);
 }
 
-/* === Menu Sticky === */
-.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--primary-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sticky.scrolled {
-  background-color: #003f7f; /* Couleur légèrement plus sombre au défilement */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* === Menu Interactif === */
-.navbar ul {
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-
-.navbar ul li {
-  position: relative;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar ul li a:hover,
-.navbar ul li a.active {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-}
-
-/* === Menu pour petits écrans === */
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    align-items: center;
-    background: var(--primary-color);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: none; /* Par défaut, le menu est caché */
-  }
-
-  .navbar ul.active {
-    display: flex; /* Affichage du menu lors du clic */
-  }
-
-  .navbar ul li {
-    margin: 10px 0;
-  }
-
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-}
-
-
 /* === Corps global === */
 body {
   line-height: 1.6;
@@ -113,11 +38,15 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-/* === En-tête === */
+/* === Header === */
 .header {
   display: flex;
   justify-content: space-between;
@@ -132,9 +61,9 @@ body {
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
   gap: 20px;
+  list-style: none;
 }
 
 .navbar ul li a {
@@ -148,7 +77,53 @@ body {
   color: var(--secondary-color);
 }
 
-/* === Bannière === */
+/* === Sticky Menu === */
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sticky.scrolled {
+  background-color: #003f7f; /* Couleur légèrement plus sombre au défilement */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* === Responsive Navbar === */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    background: var(--primary-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+  }
+
+  .navbar ul.active {
+    display: flex; /* Affichage du menu lors du clic */
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+/* === Banner === */
 .banner {
   background-image: url('../images/bank.jpg');
   background-size: cover;
@@ -200,83 +175,26 @@ body {
   transform: scale(1.05);
 }
 
-/* === À propos === */
-#about {
+/* === Sections (Générales) === */
+section {
   padding: 40px 20px;
-  background-color: #fff;
   text-align: center;
 }
 
-#about h2 {
+section h2 {
   font-size: 2.5rem;
   color: var(--primary-color);
   margin-bottom: 20px;
 }
 
-#about p {
+section p {
   font-size: 1.2rem;
   color: #555;
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* === Services === */
-#services h2 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.service-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.service {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.service img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.service h3 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-}
-
-.service p {
-  font-size: 1.1rem;
-}
-
-/* === Réalisations === */
-.carousel-section {
-  padding: 40px 20px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.carousel-content h2 {
-  margin-bottom: 20px;
-  font-size: 2.5rem;
-  color: var(--primary-color);
-}
-
+/* === Carousel === */
 .carousel {
   position: relative;
   max-width: 1200px;
@@ -293,8 +211,6 @@ body {
 .carousel-item {
   min-width: 100%;
   position: relative;
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .carousel-item img {
@@ -303,126 +219,7 @@ body {
   object-fit: cover;
 }
 
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 15px 20px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-.carousel-btn.prev {
-  left: 10px;
-}
-
-.carousel-btn.next {
-  right: 10px;
-}
-
-.carousel-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* === Contact === */
-.contact-section {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #f9f9f9, #ffffff);
-  color: var(--text-color);
-}
-
-.contact-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 2.8rem;
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #555;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.contact-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-}
-
-.contact-details {
-  flex: 1;
-  min-width: 300px;
-  text-align: center;
-}
-
-.contact-details h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-.contact-details p {
-  font-size: 1.1rem;
-}
-
-.contact-details a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.contact-details a:hover {
-  text-decoration: underline;
-}
-
-.social-media {
-  margin-top: 20px;
-}
-
-.social-media a {
-  margin-right: 15px;
-  display: inline-block;
-  transition: transform 0.3s;
-}
-
-.social-media a:hover {
-  transform: scale(1.1);
-}
-
-.social-media img {
-  width: 30px;
-  height: 30px;
-}
-
-
-/* === Pied de page === */
+/* === Footer === */
 .footer {
   background-color: #333;
   color: white;
@@ -434,11 +231,14 @@ body {
   font-size: 0.9rem;
 }
 
-
-
 /* === Animations de défilement === */
 .scroll-animation {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animation.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
