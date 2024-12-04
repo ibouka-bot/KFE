@@ -15,6 +15,81 @@
   font-family: var(--font-family);
 }
 
+/* === Menu Sticky === */
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sticky.scrolled {
+  background-color: #003f7f; /* Couleur légèrement plus sombre au défilement */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* === Menu Interactif === */
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* === Menu pour petits écrans === */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    background: var(--primary-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none; /* Par défaut, le menu est caché */
+  }
+
+  .navbar ul.active {
+    display: flex; /* Affichage du menu lors du clic */
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+
 /* === Corps global === */
 body {
   line-height: 1.6;
@@ -359,28 +434,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* === Responsivité === */
-@media (max-width: 768px) {
-  .banner h1 {
-    font-size: 2.5rem;
-  }
 
-  .banner p {
-    font-size: 1rem;
-  }
-
-  .service {
-    width: 100%;
-  }
-
-  .carousel-item img {
-    height: 300px;
-  }
-
-  .contact-wrapper {
-    flex-direction: column;
-  }
-}
 
 /* === Animations de défilement === */
 .scroll-animation {
