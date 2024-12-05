@@ -47,25 +47,35 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 10px 20px;
   background-color: var(--primary-color);
   color: white;
-  position: relative; /* Nécessaire pour le positionnement absolu du menu */
+  position: sticky; /* Reste en haut lors du défilement */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header .logo img {
-  height: 60px;
+  height: 50px; /* Ajustez la taille pour qu'elle reste proportionnée */
 }
 
-/* === Menu Interactif === */
+/* === Navbar === */
 .navbar {
+  display: flex;
+  align-items: center;
   position: relative;
 }
 
 .navbar ul {
   display: flex;
-  gap: 20px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 0 10px;
 }
 
 .navbar ul li a {
@@ -83,41 +93,42 @@ body {
   color: var(--text-color);
 }
 
-/* === Menu Responsive === */
+/* === Menu Toggle (Burger) === */
 .menu-toggle {
-  display: none;
+  display: none; /* Masqué par défaut */
+  font-size: 1.8rem;
   background: none;
   border: none;
   color: white;
-  font-size: 1.8rem;
   cursor: pointer;
-  z-index: 1001;
 }
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block; /* Afficher le toggle sur mobile */
+    display: block; /* Affiche le bouton burger sur mobile */
+    z-index: 1001;
   }
 
   .navbar ul {
-    flex-direction: column;
-    align-items: center;
-    background: var(--primary-color);
+    flex-direction: column; /* Menu vertical */
     position: absolute;
-    top: 100%;
+    top: 100%; /* Juste sous le header */
     left: 0;
     right: 0;
+    background-color: var(--primary-color);
     display: none; /* Masqué par défaut */
+    text-align: center;
   }
 
   .navbar ul.active {
-    display: flex; /* Affichage du menu lors du clic */
+    display: flex; /* Affiche le menu lorsqu'il est activé */
   }
 
   .navbar ul li {
     margin: 10px 0;
   }
 }
+
 
 /* === Bannière === */
 .banner {
