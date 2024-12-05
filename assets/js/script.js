@@ -21,28 +21,31 @@ if (header) {
 }
 
 // === Défilement fluide vers les sections avec mise en surbrillance du lien actif ===
-document.querySelectorAll('.navbar ul li a').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      window.scrollTo({
-        top: targetSection.offsetTop - (header?.offsetHeight || 0),
-        behavior: 'smooth',
-      });
+if (menu) {
+  document.querySelectorAll('.navbar ul li a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        // Défilement fluide
+        window.scrollTo({
+          top: targetSection.offsetTop - (header?.offsetHeight || 0),
+          behavior: 'smooth',
+        });
 
-      // Mise en surbrillance du lien actif
-      document.querySelectorAll('.navbar ul li a').forEach(a => a.classList.remove('active'));
-      this.classList.add('active');
+        // Mise en surbrillance du lien actif
+        document.querySelectorAll('.navbar ul li a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
 
-      // Fermer le menu sur mobile après le clic
-      if (menu.classList.contains('active')) {
-        menu.classList.remove('active');
+        // Fermer le menu sur mobile après le clic
+        if (menu.classList.contains('active')) {
+          menu.classList.remove('active');
+        }
       }
-    }
+    });
   });
-});
+}
 
 // === Menu burger pour petits écrans ===
 if (toggleButton && menu) {
@@ -52,9 +55,9 @@ if (toggleButton && menu) {
 }
 
 // === Carousel Functionality ===
-let currentIndex = 0;
-
 if (carouselTrack && prevButton && nextButton) {
+  let currentIndex = 0;
+
   const updateCarousel = () => {
     const slideWidth = carouselTrack.children[0].getBoundingClientRect().width;
     carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
@@ -78,7 +81,7 @@ if (carouselTrack && prevButton && nextButton) {
   setInterval(() => {
     currentIndex = currentIndex < carouselTrack.children.length - 1 ? currentIndex + 1 : 0;
     updateCarousel();
-  }, 9000); // Changer d'image toutes les 9 secondes
+  }, 9000); // Change d'image toutes les 9 secondes
 }
 
 // === Confirmation après envoi du formulaire ===
