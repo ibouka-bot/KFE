@@ -58,6 +58,10 @@ body {
 }
 
 /* === Menu Interactif === */
+.navbar {
+  position: relative;
+}
+
 .navbar ul {
   display: flex;
   gap: 20px;
@@ -79,23 +83,22 @@ body {
   color: var(--text-color);
 }
 
-/* === Menu Sticky === */
-.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--primary-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+/* === Menu Responsive === */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
 }
 
-.sticky.scrolled {
-  background-color: #003f7f; /* Couleur légèrement plus sombre au défilement */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* === Responsive Navbar === */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Afficher le toggle sur mobile */
+  }
+
   .navbar ul {
     flex-direction: column;
     align-items: center;
@@ -104,7 +107,7 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    display: none; /* Par défaut, le menu est caché */
+    display: none; /* Masqué par défaut */
   }
 
   .navbar ul.active {
@@ -113,15 +116,6 @@ body {
 
   .navbar ul li {
     margin: 10px 0;
-  }
-
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
   }
 }
 
