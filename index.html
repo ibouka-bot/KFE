@@ -7,29 +7,25 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Loader -->
-  <div class="loader"></div>
-
   <!-- En-tête -->
   <header class="header">
-  <div class="logo">
-    <img src="logo.png" alt="Logo KFE">
-  </div>
-  <button class="menu-toggle">&#9776;</button> <!-- Bouton burger -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#accueil" class="active">Accueil</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Logo BTP">
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Bannière -->
   <main>
-    <div class="banner" id="home">
+    <div class="banner">
       <div class="banner-content">
         <h1>Bienvenue chez KFE</h1>
         <p>Nous réalisons vos projets de construction avec expertise et qualité.</p>
@@ -38,20 +34,20 @@
     </div>
 
     <!-- Section À propos de nous -->
-    <section id="about" class="about-section scroll-animation">
-      <div class="container">
-        <h2>À propos de nous</h2>
-        <p>
-          KFE est une entreprise spécialisée dans la construction de bâtiments, la rénovation, et l'aménagement extérieur. Forts de plusieurs années d'expérience, nous mettons notre expertise au service de vos projets pour vous offrir des solutions modernes et de qualité.
-        </p>
-        <p>
-          Notre équipe est composée de professionnels qualifiés et passionnés qui s'engagent à réaliser vos projets dans le respect des délais et des normes en vigueur. Nous sommes fiers de notre réputation de fiabilité et d'excellence.
-        </p>
-      </div>
-    </section>
+    <section id="about" class="about-section">
+        <div class="container">
+          <h2>À propos de nous</h2>
+          <p>
+            BTP Construction est une entreprise spécialisée dans la construction de bâtiments, la rénovation, et l'aménagement extérieur. Forts de plusieurs années d'expérience, nous mettons notre expertise au service de vos projets pour vous offrir des solutions modernes et de qualité.
+          </p>
+          <p>
+            Notre équipe est composée de professionnels qualifiés et passionnés qui s'engagent à réaliser vos projets dans le respect des délais et des normes en vigueur. Nous sommes fiers de notre réputation de fiabilité et d'excellence.
+          </p>
+        </div>
+      </section>
 
     <!-- Section Nos Projets Réalisés -->
-    <section id="projects" class="carousel-section scroll-animation">
+    <section id="projects" class="carousel-section">
       <div class="carousel-content">
         <h2>Nos Projets Réalisés</h2>
         <div class="carousel">
@@ -87,61 +83,62 @@
     </section>
 
     <!-- Section Services -->
-    <section id="services" class="scroll-animation">
-      <h2>Nos Services</h2>
-      <div class="service-container">
-        <div class="service">
-          <img src="assets/images/batiment.png" alt="Construction de bâtiments">
-          <h3>Construction de bâtiments</h3>
-          <p>Des solutions modernes pour tous vos besoins en construction.</p>
-        </div>
-        <div class="service">
-          <img src="assets/images/service1.jpg" alt="Travaux publics">
-          <h3>Travaux publics</h3>
-          <p>Construction et réhabilitation d'infrastructures publiques : routes, ponts, et réseaux souterrains.</p>
-        </div>
-        <div class="service">
-          <img src="assets/images/service3.webp" alt="Aménagement extérieur">
-          <h3>Aménagement extérieur</h3>
-          <p>Des projets sur mesure pour embellir vos espaces extérieurs.</p>
-        </div>
-        <div class="service">
-          <img src="assets/images/route.png" alt="Construction de routes">
-          <h3>Construction de routes</h3>
-          <p>Conception et réalisation de routes fiables et durables, adaptées aux exigences modernes de transport.</p>
-        </div>
-      </div>
-    </section>
+<section id="services">
+  <h2>Nos Services</h2>
+  <div class="service-container">
+    <div class="service">
+      <img src="assets/images/batiment.png" alt="Construction de bâtiments">
+      <h3>Construction de bâtiments</h3>
+      <p>Des solutions modernes pour tous vos besoins en construction.</p>
+    </div>
+    <div class="service">
+      <img src="assets/images/service1.jpg" alt="Travaux publics">
+      <h3>Travaux publics</h3>
+      <p>Construction et réhabilitation d'infrastructures publiques : routes, ponts, et réseaux souterrains.</p>
+    </div>
+    <div class="service">
+      <img src="assets/images/service3.webp" alt="Aménagement extérieur">
+      <h3>Aménagement extérieur</h3>
+      <p>Des projets sur mesure pour embellir vos espaces extérieurs.</p>
+    </div>
+    <div class="service">
+      <img src="assets/images/route.png" alt="Construction de routes">
+      <h3>Construction de routes</h3>
+      <p>Conception et réalisation de routes fiables et durables, adaptées aux exigences modernes de transport.</p>
+    </div>
+  </div>
+</section>
   </main>
+  
 
   <!-- Section Contact -->
-  <section id="contact" class="contact-section scroll-animation">
-    <div class="container">
-      <h2 class="section-title">Contactez-nous</h2>
-      <p class="section-subtitle">Nous serions ravis de discuter de vos projets et de répondre à vos questions.</p>
-      <div class="contact-wrapper">
-        <div class="contact-details">
-          <h3>Adresse</h3>
-          <p>Dakar, Sénégal</p>
-        </div>
-        <div class="contact-details">
-          <h3>Téléphone</h3>
-          <p><a href="tel:+221123456789">33 867 05 92</a></p>
-        </div>
-        <div class="contact-details">
-          <h3>Email</h3>
-          <p><a href="mailto:contact@kfeconstruction.com">contact@KFE.com</a></p>
-        </div>
-        <div class="contact-details">
-          <h3>Réseaux Sociaux</h3>
-          <div class="social-media">
-            <a href="#"><img src="assets/images/linkedin.png" alt="LinkedIn"></a>
-            <!-- Ajoutez d'autres réseaux sociaux ici si nécessaire -->
-          </div>
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Contactez-nous</h2>
+    <p class="section-subtitle">Nous serions ravis de discuter de vos projets et de répondre à vos questions.</p>
+    <div class="contact-wrapper">
+      <div class="contact-details">
+        <h3>Adresse</h3>
+        <p>Dakar, Sénégal</p>
+      </div>
+      <div class="contact-details">
+        <h3>Téléphone</h3>
+        <p><a href="tel:+221123456789">33 867 05 92</a></p>
+      </div>
+      <div class="contact-details">
+        <h3>Email</h3>
+        <p><a href="mailto:contact@kfeconstruction.com">contact@KFE.com</a></p>
+      </div>
+      <div class="contact-details">
+        <h3>Réseaux Sociaux</h3>
+        <div class="social-media">
+          <a href="#"><img src="assets/images/linkedin.png" alt="LinkedIn"></a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Pied de page -->
   <footer class="footer">
