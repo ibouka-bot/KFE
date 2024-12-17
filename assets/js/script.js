@@ -1,13 +1,10 @@
 // === Navigation Smooth Scroll ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+  anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    const targetElement = document.querySelector(this.getAttribute('href'));
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
 
@@ -18,21 +15,19 @@ const nextButton = document.querySelector('.carousel-btn.next');
 
 let currentIndex = 0;
 
-// Fonction pour mettre à jour la position du carrousel
 function updateCarousel() {
   const slideWidth = carouselTrack.children[0].getBoundingClientRect().width;
   carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
-// Navigation avec les boutons Précédent/Suivant
-prevButton?.addEventListener('click', () => {
+prevButton.addEventListener('click', () => {
   if (currentIndex > 0) {
     currentIndex--;
     updateCarousel();
   }
 });
 
-nextButton?.addEventListener('click', () => {
+nextButton.addEventListener('click', () => {
   if (currentIndex < carouselTrack.children.length - 1) {
     currentIndex++;
     updateCarousel();
@@ -41,14 +36,20 @@ nextButton?.addEventListener('click', () => {
 
 // === Auto Scroll Functionality ===
 function autoScroll() {
-  currentIndex = (currentIndex + 1) % carouselTrack.children.length; // Retour au début après la dernière image
+  if (currentIndex < carouselTrack.children.length - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
   updateCarousel();
 }
 
-const autoScrollInterval = setInterval(autoScroll, 5000); // Défilement toutes les 5 secondes
+// Set interval for auto scroll
+setInterval(autoScroll, 9000); // Change image every 3 seconds
 
 // === Form Submit Confirmation ===
 const contactForm = document.querySelector('form');
+
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
@@ -68,53 +69,33 @@ window.addEventListener('scroll', () => {
 });
 
 // === Scroll Animation ===
-// Optimisation avec debounce pour réduire le nombre d'appels
-function debounce(func, wait = 10, immediate = true) {
-  let timeout;
-  return function () {
-    const context = this, args = arguments;
-    const later = () => {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    const callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-}
-
 const scrollElements = document.querySelectorAll('.scroll-animation');
 
-// Vérifie si un élément est visible dans la fenêtre
-const elementInView = (el, dividend = 1.25) => {
+const elementInView = (el, dividend = 1) => {
   const elementTop = el.getBoundingClientRect().top;
-  return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+  return (
+    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+  );
 };
 
-// Ajoute la classe pour afficher l'élément
 const displayScrollElement = (element) => {
   element.classList.add('visible');
 };
 
-// Gère l'animation lors du défilement
 const handleScrollAnimation = () => {
-  scrollElements.forEach(el => {
-    if (elementInView(el)) {
+  scrollElements.forEach((el) => {
+    if (elementInView(el, 1.25)) {
       displayScrollElement(el);
     }
   });
 };
 
-window.addEventListener('scroll', debounce(handleScrollAnimation));
+window.addEventListener('scroll', () => {
+  handleScrollAnimation();
+});
 
-// === Loader: Masquer après le chargement complet de la page ===
+// Masquer la loader une fois le chargement de la page terminé
 window.addEventListener('load', () => {
   const loader = document.querySelector('.loader');
-  if (loader) {
-    loader.style.opacity = '0';
-    setTimeout(() => {
-      loader.style.display = 'none';
-    }, 500); // Disparition en douceur
-  }
+  loader.style.display = 'none';
 });
