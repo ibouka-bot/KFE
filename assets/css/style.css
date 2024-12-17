@@ -296,22 +296,30 @@ h2 {
 }
 
 /* === Responsivité === */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    text-align: center;
+/* Cacher le menu burger sur les écrans larges (PC) */
+.burger {
+  display: none; /* Masque l'icône burger */
+}
+
+/* Afficher le menu burger uniquement sur mobile */
+@media screen and (max-width: 768px) {
+  .burger {
+    display: block; /* Affiche l'icône burger */
+    cursor: pointer;
   }
 
-  .navbar ul {
+  .nav-links {
+    display: none; /* Masque les liens par défaut sur mobile */
     flex-direction: column;
-    gap: 10px;
+    background-color: #f4f4f4;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
   }
 
-  .carousel-item img {
-    height: 250px;
-  }
-
-  .contact-wrapper {
-    flex-direction: column;
+  .nav-links.active {
+    display: flex; /* Affiche les liens quand le menu est activé */
   }
 }
+
